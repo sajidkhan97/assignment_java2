@@ -1,0 +1,88 @@
+employees.java
+
+
+package com.company;
+
+abstract public class Employee {
+    abstract public void getTotalSal();
+}
+
+
+labour.java
+
+
+
+package com.company;
+
+public class Labour extends Employee{
+    public double overTime ,lsal;
+    public Labour(double lsal ,double overTime)
+    {
+        this.lsal = lsal;
+        this.overTime = overTime;
+    }
+    @Override
+    public void getTotalSal() {
+        System.out.println("Labour total salary = " +  totallsal());
+    }
+    public double totallsal() {
+        double totallsal = lsal +overTime;
+        return totallsal;
+    }
+
+
+
+
+
+main.java
+
+
+
+
+
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+	Manager m = new Manager(25000,1500);
+    System.out.println("Manager Incentive = "+m.incentive);
+     m.getTotalSal();
+    System.out.println();
+        Labour l = new Labour(25000,1500);
+        System.out.println("Labour Overtime incentive = "+l.overTime);
+        l.getTotalSal();
+    System.out.println("");
+    double totalEmpSal = m.totalmsal() + l.totallsal();
+    System.out.println("Total Salary of all Employees = " + totalEmpSal);
+
+    }
+}
+
+
+
+
+
+manager.java
+
+
+
+package com.company;
+
+public class Manager extends Employee{
+    public double incentive, msal;
+    public Manager(double msal ,double incentive)
+    {
+        this.msal = msal;
+        this.incentive = incentive;
+    }
+    @Override
+    public void getTotalSal() {
+        System.out.println("Managers total Salary = " + totalmsal());
+    }
+
+    public double totalmsal() {
+        double totalmsal = msal +incentive;
+        return totalmsal;
+    }
+}

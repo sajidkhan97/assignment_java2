@@ -1,0 +1,76 @@
+cubes.java
+
+
+
+package ass2.ques5;
+
+public class Cubes extends Shape{
+    @Override
+    public void draw()
+    {
+        System.out.println("Cube Drawn");
+    }
+}
+
+
+line.java
+
+
+package ass2.ques5;
+
+public class Line extends Shape{
+    @Override
+    public void draw()
+    {
+        System.out.println("Line Drawn");
+    }
+}
+
+
+
+
+ques4
+
+package ass2.ques5;
+
+public class Ques4 {
+    public static void main(String[] args) {
+        Shape shape = new Rectangle();
+        shape.draw();
+        new Line().draw();
+        new Cubes().draw();
+    }
+}
+
+
+
+
+
+ractangle.java
+
+
+package ass2.ques5;
+
+public class Rectangle extends Shape{
+    @Override
+    public void draw()
+    {
+        System.out.println("Rectangle Drawn");
+    }
+}
+
+
+
+
+
+shape.java
+
+
+
+
+
+package ass2.ques5;
+
+public abstract class Shape {
+    public abstract void draw();
+}

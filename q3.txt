@@ -1,0 +1,105 @@
+bank.java
+
+
+
+
+package ass2.ques3;
+
+ public class Bank {
+     public double balance;
+    public Bank(double balance)
+    {
+        this.balance = balance;
+    }
+
+     public double getBalance() {
+         return balance;
+     }
+ }
+
+
+
+currentacc.java
+
+
+
+
+package ass2.ques3;
+
+public class CurrentAcc extends Bank{
+    public double creditCash;
+    CurrentAcc(double balance ,double creditCash)
+    {
+        super(balance);
+        this.creditCash = creditCash;
+    }
+    @Override
+    public double getBalance()
+    {
+        double currentBalance = balance + creditCash;
+        return currentBalance;
+    }
+    public void disp()
+    {
+        System.out.println("Initial Balance = " + balance);
+        System.out.println("Credit cash = " +  creditCash);
+        System.out.println(" Total Current Account Holder Balance= "+getBalance());
+        System.out.println("");
+    }
+}
+
+
+
+
+
+
+q3
+
+
+package ass2.ques3;
+
+public class Ques3 {
+    public static void main(String[] args) {
+        CurrentAcc currentAcc = new CurrentAcc(1000,4000);
+        currentAcc.disp();
+        SavingAcc savingAcc = new SavingAcc(10000,6000);
+        savingAcc.disp();
+        double totalBankBalance = currentAcc.getBalance()+ savingAcc.getBalance();
+        System.out.println("Total Cash in bank = " + totalBankBalance);
+    }
+}
+
+
+
+
+
+
+
+savings account.java
+
+
+
+
+package ass2.ques3;
+
+public class SavingAcc extends Bank{
+    public double fixedDeposit;
+    SavingAcc(double balance ,double fixedDeposit)
+    {
+        super(balance);
+        this.fixedDeposit = fixedDeposit;
+    }
+    @Override
+    public double getBalance()
+    {
+        double savingBalance = balance + fixedDeposit;
+        return savingBalance;
+    }
+    public void disp()
+    {
+        System.out.println("Initial Balance = " + balance);
+        System.out.println("Fixed Deposit = " + fixedDeposit);
+        System.out.println(" Total Saving Account Holder Balance= "+ getBalance());
+        System.out.println("");
+    }
+}
